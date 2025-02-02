@@ -115,7 +115,7 @@ def update_metadata(existing_metadata: Dict[str, Any], new_metadata: Dict[str, A
 
     return updated
 
-@duration("{__name__} '{project_path}'")
+# @duration("{__name__} '{project_path}'")
 def read_metadata(drive_path: Path, project_path: Path, ignore_list: Dict[str, List[str]]):
 
     files, _folders, _errors = get_filepaths_ancor( drive_path / project_path, exclude=ignore_list, show_result=False )
@@ -129,10 +129,11 @@ def read_metadata(drive_path: Path, project_path: Path, ignore_list: Dict[str, L
         "scan": {
             "date": datetime.now().isoformat(),
             "path": str(drive_path / project_path),
+            "files": len(files),
             "ignore": ignore_list,
         },
         "metadata": metadata
     }
 
     export_json( project_path, ".timestamps.json", filedata )
-    Trace.result( f"{project_path}: {len(filedata["metadata"])} files" )
+    Trace.result( f"{project_path}: {len(files)} files" )

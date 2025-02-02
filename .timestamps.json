@@ -1,19 +1,36 @@
 {
   "scan": {
-    "date": "2025-02-02T20:47:45.138966",
+    "date": "2025-02-02T22:11:50.182703",
     "path": "G:\\Python\\Git\\git-timestamp",
-    "ignore": [
-      ".git",
-      ".venv",
-      "__pycache__",
-      ".type-check-result",
-      ".mypy_cache",
-      ".timestamps.json",
-      "data",
-      "result"
-    ]
+    "files": 30,
+    "ignore": {
+      "folder": [
+        "__pycache__",
+        "_old",
+        ".git",
+        ".venv",
+        ".mypy_cache",
+        ".type-check-result",
+        "data",
+        "result",
+        "wav"
+      ],
+      "files": [
+        ".timestamps.json",
+        "desktop.ini",
+        "folderico-*.ico"
+      ]
+    }
   },
   "metadata": {
+    ".gitignore": {
+      "md5": "db399b661764682e8bc4f48e90550725",
+      "path": "",
+      "name": ".gitignore",
+      "size": 639,
+      "attr": "A",
+      "modified": "2025-01-15 16:06:24.643254+0100"
+    },
     ".python-version": {
       "md5": "789ee353b44223a8ed8031aa190631dd",
       "path": "",
@@ -29,6 +46,22 @@
       "size": 0,
       "attr": "A",
       "modified": "2024-11-30 11:04:58.925792+0100"
+    },
+    "/.vscode/launch.json": {
+      "md5": "56e0e9f5b753844c0891c3abb39327ef",
+      "path": "/.vscode",
+      "name": "launch.json",
+      "size": 270,
+      "attr": "A",
+      "modified": "2024-11-06 13:19:44.124773+0100"
+    },
+    "/.vscode/settings.json": {
+      "md5": "7f0484790204d8b50ae8dd960aba8865",
+      "path": "/.vscode",
+      "name": "settings.json",
+      "size": 2031,
+      "attr": "A",
+      "modified": "2025-01-21 21:19:52.325255+0100"
     },
     "LICENSE": {
       "md5": "43633bbc230bb0f031171b9d6e7fed00",
@@ -70,61 +103,21 @@
       "attr": "A",
       "modified": "2024-12-04 21:58:59.993012+0100"
     },
-    "uv.lock": {
-      "md5": "056afb603fad4912679afd8440bab3d5",
-      "path": "",
-      "name": "uv.lock",
-      "size": 10635,
+    "/settings/.gitkeep": {
+      "md5": "d41d8cd98f00b204e9800998ecf8427e",
+      "path": "/settings",
+      "name": ".gitkeep",
+      "size": 0,
       "attr": "A",
-      "modified": "2025-02-02 14:51:55.694440+0100"
+      "modified": "2024-12-11 12:59:46.248217+0100"
     },
-    "_mypy.py": {
-      "md5": "3fdc79087fa0a24205c59b61abc2607c",
-      "path": "",
-      "name": "_mypy.py",
-      "size": 4721,
+    "/settings/ignore.yaml": {
+      "md5": "ed40d3fcd4a76a52d350897d2403a022",
+      "path": "/settings",
+      "name": "ignore.yaml",
+      "size": 257,
       "attr": "A",
-      "modified": "2025-01-21 21:33:17.882997+0100"
-    },
-    "_pyright.py": {
-      "md5": "2d8f8094cfb7ecf951f2e4a276b3f44f",
-      "path": "",
-      "name": "_pyright.py",
-      "size": 4700,
-      "attr": "A",
-      "modified": "2025-02-02 13:05:39.808825+0100"
-    },
-    "___cheatsheet.txt": {
-      "md5": "832b236d0c98252bc8cb1c7fa0719214",
-      "path": "",
-      "name": "___cheatsheet.txt",
-      "size": 6321,
-      "attr": "A",
-      "modified": "2025-02-02 14:16:36.278416+0100"
-    },
-    "___start.txt": {
-      "md5": "ec5e1a08b48bd3549e322c03bb59c9b7",
-      "path": "",
-      "name": "___start.txt",
-      "size": 146,
-      "attr": "A",
-      "modified": "2025-02-02 14:33:10.710199+0100"
-    },
-    "/.vscode/launch.json": {
-      "md5": "56e0e9f5b753844c0891c3abb39327ef",
-      "path": "/.vscode",
-      "name": "launch.json",
-      "size": 270,
-      "attr": "A",
-      "modified": "2024-11-06 13:19:44.124773+0100"
-    },
-    "/.vscode/settings.json": {
-      "md5": "7f0484790204d8b50ae8dd960aba8865",
-      "path": "/.vscode",
-      "name": "settings.json",
-      "size": 2031,
-      "attr": "A",
-      "modified": "2025-01-21 21:19:52.325255+0100"
+      "modified": "2025-02-02 22:10:15.325736+0100"
     },
     "/settings/projects.yaml": {
       "md5": "1f053b620cd30b7ffd23229619901644",
@@ -134,13 +127,29 @@
       "attr": "A",
       "modified": "2025-02-02 20:31:37.292388+0100"
     },
+    "/src/helper/rekursion.py": {
+      "md5": "95c862957ec2a63f174a373205f62cb0",
+      "path": "/src/helper",
+      "name": "rekursion.py",
+      "size": 3820,
+      "attr": "A",
+      "modified": "2025-02-02 21:50:52.700466+0100"
+    },
     "/src/main.py": {
-      "md5": "69ef3ca395666ba86ef720acdaab006c",
+      "md5": "2b2de5530aa8bff0bf8fc8816d27f9d0",
       "path": "/src",
       "name": "main.py",
-      "size": 1265,
+      "size": 1208,
       "attr": "A",
-      "modified": "2025-02-02 20:47:05.236053+0100"
+      "modified": "2025-02-02 22:11:45.230294+0100"
+    },
+    "/src/read_data.py": {
+      "md5": "5b95c48a20af9e9d324df210ccf51c86",
+      "path": "/src",
+      "name": "read_data.py",
+      "size": 4342,
+      "attr": "A",
+      "modified": "2025-02-02 22:05:10.724514+0100"
     },
     "/src/update.py": {
       "md5": "975cffda4638c4e013608566835b8d69",
@@ -149,14 +158,6 @@
       "size": 3409,
       "attr": "A",
       "modified": "2025-02-01 18:03:42.867956+0100"
-    },
-    "/src/__init__.py": {
-      "md5": "d41d8cd98f00b204e9800998ecf8427e",
-      "path": "/src",
-      "name": "__init__.py",
-      "size": 0,
-      "attr": "AP",
-      "modified": "2024-12-09 20:42:31.673863+0100"
     },
     "/src/utils/decorator.py": {
       "md5": "dbc61109d24411febaae143423b6297f",
@@ -213,6 +214,54 @@
       "size": 0,
       "attr": "AP",
       "modified": "2025-01-06 12:02:20.892843+0100"
+    },
+    "/src/__init__.py": {
+      "md5": "d41d8cd98f00b204e9800998ecf8427e",
+      "path": "/src",
+      "name": "__init__.py",
+      "size": 0,
+      "attr": "AP",
+      "modified": "2024-12-09 20:42:31.673863+0100"
+    },
+    "uv.lock": {
+      "md5": "056afb603fad4912679afd8440bab3d5",
+      "path": "",
+      "name": "uv.lock",
+      "size": 10635,
+      "attr": "A",
+      "modified": "2025-02-02 14:51:55.694440+0100"
+    },
+    "_mypy.py": {
+      "md5": "3fdc79087fa0a24205c59b61abc2607c",
+      "path": "",
+      "name": "_mypy.py",
+      "size": 4721,
+      "attr": "A",
+      "modified": "2025-01-21 21:33:17.882997+0100"
+    },
+    "_pyright.py": {
+      "md5": "2d8f8094cfb7ecf951f2e4a276b3f44f",
+      "path": "",
+      "name": "_pyright.py",
+      "size": 4700,
+      "attr": "A",
+      "modified": "2025-02-02 13:05:39.808825+0100"
+    },
+    "___cheatsheet.txt": {
+      "md5": "832b236d0c98252bc8cb1c7fa0719214",
+      "path": "",
+      "name": "___cheatsheet.txt",
+      "size": 6321,
+      "attr": "A",
+      "modified": "2025-02-02 14:16:36.278416+0100"
+    },
+    "___start.txt": {
+      "md5": "ec5e1a08b48bd3549e322c03bb59c9b7",
+      "path": "",
+      "name": "___start.txt",
+      "size": 146,
+      "attr": "A",
+      "modified": "2025-02-02 14:33:10.710199+0100"
     }
   }
 }

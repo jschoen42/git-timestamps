@@ -12,16 +12,9 @@ from utils.prefs     import Prefs
 
 from read_data import read_metadata
 
-DATA_PATH   = BASE_PATH / "data"
-RESULT_PATH = BASE_PATH / "result"
-
-ignore_list: Dict[str, List[str]] = {
-    "folder": [".git", ".venv", "__pycache__", ".mypy_cache", ".type-check-result", "__MACOSX", "node_modules", "data", "result", ".mypy_cache"],
-    "files": [ ".timestamps.json", "desktop.ini", "folderico-*.ico" ]
-}
-
 def main() -> None:
     projects  = Prefs.get("projects")
+    ignore_list = Prefs.get("ignore_list")
 
     for project in projects:
         dest = DRIVE / project["path"] / project["name"]
@@ -40,7 +33,7 @@ if __name__ == "__main__":
 
     Prefs.init("settings", "")
     Prefs.load("projects.yaml")
-
+    Prefs.load("ignore.yaml")
     try:
         main()
     except KeyboardInterrupt:
