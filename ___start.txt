@@ -1,0 +1,8 @@
+pwsh: .venv/Scripts/activate
+bash: source .venv/Scripts/activate
+deactivate
+
+python src/main.py
+
+python _mypy.py src
+python _pyright.py src
