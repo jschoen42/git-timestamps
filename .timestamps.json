@@ -1,8 +1,8 @@
 {
   "scan": {
-    "date": "2025-02-02T22:11:50.182703",
-    "path": "G:\\Python\\Git\\git-timestamp",
-    "files": 30,
+    "date": "2025-02-02T22:49:37.900733",
+    "path": "G:/Python/Git/git-timestamp",
+    "files": 29,
     "ignore": {
       "folder": [
         "__pycache__",
@@ -127,37 +127,29 @@
       "attr": "A",
       "modified": "2025-02-02 20:31:37.292388+0100"
     },
+    "/src/helper/read_data.py": {
+      "md5": "ba8192071ecc77da5b3ea5265013ddca",
+      "path": "/src/helper",
+      "name": "read_data.py",
+      "size": 4378,
+      "attr": "A",
+      "modified": "2025-02-02 22:47:18.317478+0100"
+    },
     "/src/helper/rekursion.py": {
-      "md5": "95c862957ec2a63f174a373205f62cb0",
+      "md5": "08c31f8dcc44ecce642a76ba61c0c281",
       "path": "/src/helper",
       "name": "rekursion.py",
-      "size": 3820,
+      "size": 3877,
       "attr": "A",
-      "modified": "2025-02-02 21:50:52.700466+0100"
+      "modified": "2025-02-02 22:49:26.922615+0100"
     },
     "/src/main.py": {
-      "md5": "2b2de5530aa8bff0bf8fc8816d27f9d0",
+      "md5": "9de4df0b70979f99437d4c7f448ca59b",
       "path": "/src",
       "name": "main.py",
-      "size": 1208,
+      "size": 1003,
       "attr": "A",
-      "modified": "2025-02-02 22:11:45.230294+0100"
-    },
-    "/src/read_data.py": {
-      "md5": "5b95c48a20af9e9d324df210ccf51c86",
-      "path": "/src",
-      "name": "read_data.py",
-      "size": 4342,
-      "attr": "A",
-      "modified": "2025-02-02 22:05:10.724514+0100"
-    },
-    "/src/update.py": {
-      "md5": "975cffda4638c4e013608566835b8d69",
-      "path": "/src",
-      "name": "update.py",
-      "size": 3409,
-      "attr": "A",
-      "modified": "2025-02-01 18:03:42.867956+0100"
+      "modified": "2025-02-02 22:30:14.832366+0100"
     },
     "/src/utils/decorator.py": {
       "md5": "dbc61109d24411febaae143423b6297f",
@@ -200,12 +192,12 @@
       "modified": "2025-01-19 18:11:07.865167+0100"
     },
     "/src/utils/util.py": {
-      "md5": "7b62f294a9e7eabb7b4760af4d6c0550",
+      "md5": "52a5a8ff93d17732f10f714dedba78ef",
       "path": "/src/utils",
       "name": "util.py",
-      "size": 7087,
+      "size": 7166,
       "attr": "A",
-      "modified": "2025-01-19 18:11:02.008789+0100"
+      "modified": "2025-02-02 22:39:29.807694+0100"
     },
     "/src/utils/__init__.py": {
       "md5": "d41d8cd98f00b204e9800998ecf8427e",

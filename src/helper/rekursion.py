@@ -12,7 +12,7 @@
 """
 import fnmatch
 
-from typing import Dict, List, Tuple
+from typing import Any, Dict, List, Tuple
 from pathlib import Path
 
 from utils.trace     import Trace
@@ -23,7 +23,7 @@ from utils.decorator import duration
 #     "files": ["desktop.ini", "folderico*.ico"]
 # }
 
-def match_not_exclude( name: str, excludes: None | Dict ) -> bool:
+def match_not_exclude( name: str, excludes: None | Dict[str, str] ) -> bool:
     if excludes is None:
         return True
 
@@ -34,12 +34,12 @@ def match_not_exclude( name: str, excludes: None | Dict ) -> bool:
     return True
 
 @duration("{__name__} '{0}'")
-def get_filepaths_all( path: Path, exclude: Dict = {"folder": None, "files": None}, show_result: bool = True ) -> Tuple[List, List, List]:
+def get_filepaths_all( path: Path, exclude: Dict[str, Any] = {"folder": None, "files": None}, show_result: bool = True ) -> Tuple[List[str], List[str], List[str]]:
     Trace.action(f"path '{path}'")
 
-    files:   List = []
-    folders: List = []
-    errors:  List = []
+    files:   List[str] = []
+    folders: List[str] = []
+    errors:  List[str] = []
 
     def get_filepaths( path: Path ) -> None:
         try:
@@ -71,12 +71,12 @@ def get_filepaths_all( path: Path, exclude: Dict = {"folder": None, "files": Non
     return files, folders, errors
 
 # @duration("{__name__} '{0}'")
-def get_filepaths_ancor( ancor_path: Path, exclude: Dict = {"folder": None, "files": None}, show_result: bool = True ) -> Tuple[List, List, List]:
-    Trace.action(f"ancor '{ancor_path}'")
+def get_filepaths_ancor( ancor_path: Path, exclude: Dict[str, Any] = {"folder": None, "files": None}, show_result: bool = True ) -> Tuple[List[str], List[str], List[str]]:
+    # Trace.action(f"ancor '{ancor_path}'")
 
-    files:   List = []
-    folders: List = []
-    errors:  List = []
+    files:   List[str] = []
+    folders: List[str] = []
+    errors:  List[str] = []
 
     def get_filepaths( rel_path: str ) -> None:
         curr_path = ancor_path / rel_path

@@ -6,7 +6,7 @@ from pathlib import Path, PurePosixPath
 from datetime import datetime, timezone
 
 from utils.trace import Trace
-from utils.decorator import duration
+# from utils.decorator import duration
 
 from utils.util import export_json, import_json
 
@@ -91,7 +91,7 @@ def calculate_md5(file_path: Path) -> str:
             hash_md5.update(chunk)
     return hash_md5.hexdigest()
 
-def scan_files(drive: Path, project_path: Path, files: List) -> Dict[str, Any]:
+def scan_files(drive: Path, project_path: Path, files: List[str]) -> Dict[str, Any]:
     metadata: Dict[str, Any] = {}
     for file in files:
         file_path = drive / project_path / file
@@ -116,7 +116,7 @@ def update_metadata(existing_metadata: Dict[str, Any], new_metadata: Dict[str, A
     return updated
 
 # @duration("{__name__} '{project_path}'")
-def read_metadata(drive_path: Path, project_path: Path, ignore_list: Dict[str, List[str]]):
+def read_metadata(drive_path: Path, project_path: Path, ignore_list: Dict[str, List[str]]) -> None:
 
     files, _folders, _errors = get_filepaths_ancor( drive_path / project_path, exclude=ignore_list, show_result=False )
     metadata = scan_files(drive_path, project_path, files)
@@ -128,12 +128,12 @@ def read_metadata(drive_path: Path, project_path: Path, ignore_list: Dict[str, L
     filedata = {
         "scan": {
             "date": datetime.now().isoformat(),
-            "path": str(drive_path / project_path),
+            "path": (drive_path / project_path).as_posix(),
             "files": len(files),
             "ignore": ignore_list,
         },
         "metadata": metadata
     }
 
-    export_json( project_path, ".timestamps.json", filedata )
-    Trace.result( f"{project_path}: {len(files)} files" )
+    export_json( project_path, ".timestamps.json", filedata, show_message=False )
+    Trace.result( f"'{project_path}' {len(files)} files" )
