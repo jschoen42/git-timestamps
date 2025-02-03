@@ -151,6 +151,7 @@ def scan_files(drive: Path, project_path: Path, files: List[str]) -> Dict[str, A
     for file in files:
         file_path = drive / project_path / file
 
+        key = ""
         try:
             key, data = get_file_metadata(Path(file_path), project_path)
             if data is not None:

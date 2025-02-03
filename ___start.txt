@@ -2,7 +2,9 @@ pwsh: .venv/Scripts/activate
 bash: source .venv/Scripts/activate
 deactivate
 
-python src/main.py
+python src/main.py -r
+python src/main.py -w -s projects.yaml
+python src/main.py -r -s projects_all.yaml
 
 python _mypy.py src
 python _pyright.py src

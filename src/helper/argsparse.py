@@ -15,7 +15,7 @@ from argparse import ArgumentParser, Namespace
 
 # from utils.trace import Trace
 
-def parse_arguments(default_settings) -> Dict[str, Any]:
+def parse_arguments(default_settings: str) -> Dict[str, Any]:
     parser = ArgumentParser(description="save/restore file timestamps")
     parser.add_argument("-w", "--write", action="store_true", help="Write timestamps")
     parser.add_argument("-r", "--read", action="store_true", help="Read timestamps")

@@ -1,14 +1,14 @@
 """
-    © Jürgen Schoenemeyer, 09.02.2025
+    © Jürgen Schoenemeyer, 03.02.2025
 
     PUBLIC:
-     - get_filepaths_all( path: Path, exclude: Dict = None ) -> Tuple[List, List, List]
-     - get_filepaths_ancor( ancor_path: Path, exclude: Dict = None ) -> Tuple[List, List, List]:
+     - path: Path, exclude: Dict[str, Any] = {"folder": None, "files": None}, show_result: bool = True ) -> Tuple[List[str], List[str], List[str]]
+     - get_filepaths_ancor( ancor_path: Path, exclude: Dict[str, Any] = {"folder": None, "files": None}, show_result: bool = True ) -> Tuple[List[str], List[str], List[str]]
         - ancor path: relative/absolute path
         - folder, files, error paths: relative to ancor_path
 
     PRIVAT:
-     - match_not_exclude( name: str, excludes: Dict ) -> bool
+     - match_not_exclude( name: str, excludes: None | Dict[str, str] ) -> bool
 """
 import fnmatch
 
@@ -34,7 +34,12 @@ def match_not_exclude( name: str, excludes: None | Dict[str, str] ) -> bool:
     return True
 
 @duration("{__name__} '{0}'")
-def get_filepaths_all( path: Path, exclude: Dict[str, Any] = {"folder": None, "files": None}, show_result: bool = True ) -> Tuple[List[str], List[str], List[str]]:
+def get_filepaths_all(
+    path: Path,
+    exclude: Dict[str, Any] = {"folder": None, "files": None},
+    show_result: bool = True
+) -> Tuple[List[str], List[str], List[str]]:
+
     Trace.action(f"path '{path}'")
 
     files:   List[str] = []
@@ -71,8 +76,11 @@ def get_filepaths_all( path: Path, exclude: Dict[str, Any] = {"folder": None, "f
     return files, folders, errors
 
 # @duration("{__name__} '{0}'")
-def get_filepaths_ancor( ancor_path: Path, exclude: Dict[str, Any] = {"folder": None, "files": None}, show_result: bool = True ) -> Tuple[List[str], List[str], List[str]]:
-    # Trace.action(f"ancor '{ancor_path}'")
+def get_filepaths_ancor(
+    ancor_path: Path,
+    exclude: Dict[str, Any] = {"folder": None, "files": None},
+    show_result: bool = True
+) -> Tuple[List[str], List[str], List[str]]:
 
     files:   List[str] = []
     folders: List[str] = []
