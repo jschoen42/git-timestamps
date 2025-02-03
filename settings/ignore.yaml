@@ -12,6 +12,7 @@ ignore_list:
     - data
     - result
     - wav
+    - examples
 
   files:
     - .timestamps.json

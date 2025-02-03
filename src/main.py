@@ -1,6 +1,10 @@
 # .venv/Scripts/activate
 # python src/main.py
 
+# python src/main.py -r
+# python src/main.py -w -s projects.yaml
+# python src/main.py -r -s projects_all.yaml
+
 import sys
 
 from pathlib import Path
@@ -9,9 +13,10 @@ from utils.globals   import DRIVE
 from utils.trace     import Trace
 from utils.prefs     import Prefs
 
+from helper.argsparse  import parse_arguments
 from helper.timestamps import read_metadata, write_metadata
 
-def main() -> None:
+def main( write: bool = False ) -> None:
     projects  = Prefs.get("projects")
     ignore_list = Prefs.get("ignore_list")
 
@@ -22,20 +27,25 @@ def main() -> None:
             Trace.error(f"Project '{dest}' not found")
             continue
 
-        read_metadata(DRIVE, Path(project["path"]) / project["name"], ignore_list)
-        # write_metadata(DRIVE, Path(project["path"]) / project["name"], verbose=True)
-
+        if write:
+            write_metadata(DRIVE, Path(project["path"]) / project["name"], verbose=True)
+        else:
+            read_metadata(DRIVE, Path(project["path"]) / project["name"], ignore_list, reset=True)
 
 if __name__ == "__main__":
     Trace.set( debug_mode=True, timezone=False )
     Trace.action(f"Python version {sys.version}")
 
+    setting = "projects.yaml"    # projects_all.yaml projects.yaml
+    args = parse_arguments(setting)
+
     Prefs.init("settings", "")
-    Prefs.load("projects_all.yaml") # projects_all.yaml projects.yaml
+    if not Prefs.load(args["setting"]):
+        Trace.fatal( f"setting '/settings/{args["setting"]}' not exist" )
     Prefs.load("ignore.yaml")
 
     try:
-        main()
+        main( args["write"] )
     except KeyboardInterrupt:
         Trace.exception("KeyboardInterrupt")
         sys.exit()

@@ -1,8 +1,8 @@
 {
   "scan": {
-    "date": "2025-02-03T16:00:49.605505",
+    "date": "2025-02-03T18:43:41.783861",
     "path": "G:/Python/Git/git-timestamp",
-    "files": 30,
+    "files": 31,
     "ignore": {
       "folder": [
         "__pycache__",
@@ -13,7 +13,8 @@
         ".type-check-result",
         "data",
         "result",
-        "wav"
+        "wav",
+        "examples"
       ],
       "files": [
         ".timestamps.json",
@@ -29,7 +30,9 @@
       "name": ".gitignore",
       "size": 639,
       "attr": "A",
-      "modified": "2025-01-15 16:06:24.643254+0100"
+      "modified": "2025-01-15 16:06:24.611592+0100",
+      "created": "2025-02-02 14:42:42.563344+0100",
+      "access": "2025-02-03 18:43:41.720010+0100"
     },
     ".python-version": {
       "md5": "789ee353b44223a8ed8031aa190631dd",
@@ -37,7 +40,9 @@
       "name": ".python-version",
       "size": 5,
       "attr": "A",
-      "modified": "2025-02-02 14:46:33.512522+0100"
+      "modified": "2024-11-26 16:30:59.419801+0100",
+      "created": "2025-02-02 14:46:33.512522+0100",
+      "access": "2025-02-03 18:43:41.720010+0100"
     },
     ".Python313-Local": {
       "md5": "d41d8cd98f00b204e9800998ecf8427e",
@@ -45,23 +50,29 @@
       "name": ".Python313-Local",
       "size": 0,
       "attr": "A",
-      "modified": "2024-11-30 11:04:58.925792+0100"
+      "modified": "2024-11-30 11:04:58.925792+0100",
+      "created": "2025-02-02 14:42:42.570698+0100",
+      "access": "2025-02-02 14:42:42.570698+0100"
     },
-    "/.vscode/launch.json": {
+    ".vscode/launch.json": {
       "md5": "56e0e9f5b753844c0891c3abb39327ef",
-      "path": "/.vscode",
+      "path": ".vscode",
       "name": "launch.json",
       "size": 270,
       "attr": "A",
-      "modified": "2024-11-06 13:19:44.124773+0100"
+      "modified": "2024-11-06 13:19:44.124773+0100",
+      "created": "2025-02-02 14:42:42.618208+0100",
+      "access": "2025-02-03 18:43:41.738286+0100"
     },
-    "/.vscode/settings.json": {
+    ".vscode/settings.json": {
       "md5": "7f0484790204d8b50ae8dd960aba8865",
-      "path": "/.vscode",
+      "path": ".vscode",
       "name": "settings.json",
       "size": 2031,
       "attr": "A",
-      "modified": "2025-01-21 21:19:52.325255+0100"
+      "modified": "2025-01-21 21:19:52.325255+0100",
+      "created": "2025-02-02 14:42:42.625201+0100",
+      "access": "2025-02-03 18:43:41.739286+0100"
     },
     "LICENSE": {
       "md5": "43633bbc230bb0f031171b9d6e7fed00",
@@ -69,7 +80,9 @@
       "name": "LICENSE",
       "size": 1064,
       "attr": "A",
-      "modified": "2024-12-29 22:06:12.764633+0100"
+      "modified": "2024-12-29 22:06:12.764633+0100",
+      "created": "2025-02-02 14:42:42.573711+0100",
+      "access": "2025-02-03 18:43:41.741077+0100"
     },
     "pyproject.toml": {
       "md5": "2386a6638c07be3afb6ed4b8921a1bfb",
@@ -77,7 +90,9 @@
       "name": "pyproject.toml",
       "size": 676,
       "attr": "A",
-      "modified": "2025-02-02 23:17:37.886969+0100"
+      "modified": "2025-02-02 23:17:37.886969+0100",
+      "created": "2025-02-02 14:46:33.164855+0100",
+      "access": "2025-02-03 18:43:41.742079+0100"
     },
     "README.md": {
       "md5": "d41d8cd98f00b204e9800998ecf8427e",
@@ -85,7 +100,9 @@
       "name": "README.md",
       "size": 0,
       "attr": "A",
-      "modified": "2024-11-23 00:07:05.885005+0100"
+      "modified": "2024-11-23 00:07:05.885005+0100",
+      "created": "2025-02-02 14:42:42.577233+0100",
+      "access": "2025-02-02 14:42:42.577233+0100"
     },
     "requirements.txt": {
       "md5": "b7e3f1bb18fc24ff048f76cf6f7b36ec",
@@ -93,7 +110,9 @@
       "name": "requirements.txt",
       "size": 8,
       "attr": "A",
-      "modified": "2025-02-02 22:55:10.687830+0100"
+      "modified": "2025-02-02 22:55:10.687830+0100",
+      "created": "2025-02-02 14:42:42.580225+0100",
+      "access": "2025-02-03 18:43:41.745152+0100"
     },
     "ruff.toml": {
       "md5": "8d90a4d239ad09f87cfdd86afb961fa9",
@@ -101,127 +120,169 @@
       "name": "ruff.toml",
       "size": 71,
       "attr": "A",
-      "modified": "2024-12-04 21:58:59.993012+0100"
+      "modified": "2024-12-04 21:58:59.993012+0100",
+      "created": "2025-02-02 14:42:42.583248+0100",
+      "access": "2025-02-03 18:43:41.746147+0100"
     },
-    "/settings/.gitkeep": {
+    "settings/.gitkeep": {
       "md5": "d41d8cd98f00b204e9800998ecf8427e",
-      "path": "/settings",
+      "path": "settings",
       "name": ".gitkeep",
       "size": 0,
       "attr": "A",
-      "modified": "2024-12-11 12:59:46.248217+0100"
+      "modified": "2024-12-11 12:59:46.248217+0100",
+      "created": "2025-02-02 14:42:42.669367+0100",
+      "access": "2025-02-02 14:42:42.669367+0100"
     },
-    "/settings/ignore.yaml": {
-      "md5": "ed40d3fcd4a76a52d350897d2403a022",
-      "path": "/settings",
+    "settings/ignore.yaml": {
+      "md5": "c991bd6e990dbf33202aec11c0eb5436",
+      "path": "settings",
       "name": "ignore.yaml",
-      "size": 257,
+      "size": 273,
       "attr": "A",
-      "modified": "2025-02-02 22:10:15.325736+0100"
+      "modified": "2025-02-03 18:43:37.048003+0100",
+      "created": "2025-02-02 22:08:30.793538+0100",
+      "access": "2025-02-03 18:43:41.748147+0100"
     },
-    "/settings/projects.yaml": {
+    "settings/projects.yaml": {
       "md5": "5b0968f3a199c328f95b715bd70b63fb",
-      "path": "/settings",
+      "path": "settings",
       "name": "projects.yaml",
       "size": 95,
       "attr": "A",
-      "modified": "2025-02-03 13:54:37.325421+0100"
+      "modified": "2025-02-03 13:54:37.325421+0100",
+      "created": "2025-02-03 13:53:25.870646+0100",
+      "access": "2025-02-03 18:43:41.749681+0100"
     },
-    "/settings/projects_all.yaml": {
+    "settings/projects_all.yaml": {
       "md5": "1f053b620cd30b7ffd23229619901644",
-      "path": "/settings",
+      "path": "settings",
       "name": "projects_all.yaml",
       "size": 3223,
       "attr": "A",
-      "modified": "2025-02-02 21:53:49.162526+0100"
+      "modified": "2025-02-02 21:53:49.162526+0100",
+      "created": "2025-02-02 14:45:08.806148+0100",
+      "access": "2025-02-03 18:43:41.756426+0100"
     },
-    "/src/helper/rekursion.py": {
+    "src/helper/argsparse.py": {
+      "md5": "4d7d07ba41b5d14130aee0c142df8ccc",
+      "path": "src/helper",
+      "name": "argsparse.py",
+      "size": 1147,
+      "attr": "A",
+      "modified": "2025-02-03 18:06:55.499643+0100",
+      "created": "2025-02-03 17:26:40.633239+0100",
+      "access": "2025-02-03 18:43:41.760417+0100"
+    },
+    "src/helper/rekursion.py": {
       "md5": "d0aca53218bafffa7516c8c3e37b85d1",
-      "path": "/src/helper",
+      "path": "src/helper",
       "name": "rekursion.py",
       "size": 3917,
       "attr": "A",
-      "modified": "2025-02-02 22:51:47.621129+0100"
+      "modified": "2025-02-02 22:51:47.621129+0100",
+      "created": "2025-02-02 21:04:48.150353+0100",
+      "access": "2025-02-03 18:43:41.761421+0100"
     },
-    "/src/helper/timestamps.py": {
-      "md5": "30af10e9b48707b7efc6474421615195",
-      "path": "/src/helper",
+    "src/helper/timestamps.py": {
+      "md5": "944c1e43d6ad9b509227dcdaf974a921",
+      "path": "src/helper",
       "name": "timestamps.py",
-      "size": 6447,
+      "size": 6974,
       "attr": "A",
-      "modified": "2025-02-03 15:57:11.125616+0100"
+      "modified": "2025-02-03 18:32:29.852539+0100",
+      "created": "2025-02-03 15:49:15.770229+0100",
+      "access": "2025-02-03 18:43:41.763434+0100"
     },
-    "/src/main.py": {
-      "md5": "a20153e399a24868084a954ff25651fe",
-      "path": "/src",
+    "src/main.py": {
+      "md5": "e56ab042fedd5323eb2a828d661c253e",
+      "path": "src",
       "name": "main.py",
-      "size": 1135,
+      "size": 1535,
       "attr": "A",
-      "modified": "2025-02-03 16:00:03.709118+0100"
+      "modified": "2025-02-03 18:33:43.438750+0100",
+      "created": "2025-02-02 14:42:42.683746+0100",
+      "access": "2025-02-03 18:43:41.764417+0100"
     },
-    "/src/utils/decorator.py": {
+    "src/utils/decorator.py": {
       "md5": "dbc61109d24411febaae143423b6297f",
-      "path": "/src/utils",
+      "path": "src/utils",
       "name": "decorator.py",
       "size": 10371,
       "attr": "A",
-      "modified": "2025-01-27 20:02:01.279274+0100"
+      "modified": "2025-01-27 20:02:01.279274+0100",
+      "created": "2025-02-02 14:42:42.699510+0100",
+      "access": "2025-02-03 18:43:41.765417+0100"
     },
-    "/src/utils/file.py": {
+    "src/utils/file.py": {
       "md5": "40331e6e76ec21574a1bccf3608551b9",
-      "path": "/src/utils",
+      "path": "src/utils",
       "name": "file.py",
       "size": 14154,
       "attr": "A",
-      "modified": "2025-01-29 22:02:54.505297+0100"
+      "modified": "2025-01-29 22:02:54.505297+0100",
+      "created": "2025-02-02 14:42:42.704533+0100",
+      "access": "2025-02-03 18:43:41.766417+0100"
     },
-    "/src/utils/globals.py": {
+    "src/utils/globals.py": {
       "md5": "751cfa93af496a8c1531a19525514219",
-      "path": "/src/utils",
+      "path": "src/utils",
       "name": "globals.py",
       "size": 563,
       "attr": "A",
-      "modified": "2025-01-27 19:37:56.760238+0100"
+      "modified": "2025-01-27 19:37:56.760238+0100",
+      "created": "2025-02-02 14:42:42.709532+0100",
+      "access": "2025-02-03 18:43:41.767421+0100"
     },
-    "/src/utils/prefs.py": {
-      "md5": "a6270d8c585877cb0a19795c64446f2c",
-      "path": "/src/utils",
+    "src/utils/prefs.py": {
+      "md5": "09a08bce54a18d44fa263cb8db8c4640",
+      "path": "src/utils",
       "name": "prefs.py",
-      "size": 6568,
+      "size": 6594,
       "attr": "AP",
-      "modified": "2025-01-19 18:11:39.980743+0100"
+      "modified": "2025-02-03 17:57:23.867489+0100",
+      "created": "2025-02-02 14:49:18.661840+0100",
+      "access": "2025-02-03 18:43:41.768423+0100"
     },
-    "/src/utils/trace.py": {
+    "src/utils/trace.py": {
       "md5": "ce53f99ffe4b1dcf57909bfb844f3f9d",
-      "path": "/src/utils",
+      "path": "src/utils",
       "name": "trace.py",
       "size": 15973,
       "attr": "A",
-      "modified": "2025-02-02 23:45:36.000087+0100"
+      "modified": "2025-02-03 00:08:10.807939+0100",
+      "created": "2025-02-02 14:42:42.716777+0100",
+      "access": "2025-02-03 18:43:41.768423+0100"
     },
-    "/src/utils/util.py": {
+    "src/utils/util.py": {
       "md5": "52a5a8ff93d17732f10f714dedba78ef",
-      "path": "/src/utils",
+      "path": "src/utils",
       "name": "util.py",
       "size": 7166,
       "attr": "A",
-      "modified": "2025-02-02 22:39:29.807694+0100"
+      "modified": "2025-02-02 22:39:29.807694+0100",
+      "created": "2025-02-02 14:42:42.722774+0100",
+      "access": "2025-02-03 18:43:41.776850+0100"
     },
-    "/src/utils/__init__.py": {
+    "src/utils/__init__.py": {
       "md5": "d41d8cd98f00b204e9800998ecf8427e",
-      "path": "/src/utils",
+      "path": "src/utils",
       "name": "__init__.py",
       "size": 0,
       "attr": "AP",
-      "modified": "2025-01-06 12:02:20.892843+0100"
+      "modified": "2025-01-06 12:02:20.892843+0100",
+      "created": "2025-02-02 14:42:42.728770+0100",
+      "access": "2025-02-02 14:42:42.728770+0100"
     },
-    "/src/__init__.py": {
+    "src/__init__.py": {
       "md5": "d41d8cd98f00b204e9800998ecf8427e",
-      "path": "/src",
+      "path": "src",
       "name": "__init__.py",
       "size": 0,
       "attr": "AP",
-      "modified": "2024-12-09 20:42:31.673863+0100"
+      "modified": "2024-12-09 20:42:31.673863+0100",
+      "created": "2025-02-02 14:42:42.690523+0100",
+      "access": "2025-02-02 14:42:42.690523+0100"
     },
     "uv.lock": {
       "md5": "056afb603fad4912679afd8440bab3d5",
@@ -229,7 +290,9 @@
       "name": "uv.lock",
       "size": 10635,
       "attr": "A",
-      "modified": "2025-02-02 14:51:55.694440+0100"
+      "modified": "2025-02-02 14:51:55.694440+0100",
+      "created": "2025-02-02 14:47:35.789573+0100",
+      "access": "2025-02-03 18:43:41.778790+0100"
     },
     "_mypy.py": {
       "md5": "2e14138b0e4070c44dedc7b1621aba07",
@@ -237,7 +300,9 @@
       "name": "_mypy.py",
       "size": 4821,
       "attr": "A",
-      "modified": "2025-02-02 23:14:35.723451+0100"
+      "modified": "2025-02-02 23:14:35.723451+0100",
+      "created": "2025-02-02 14:42:42.590490+0100",
+      "access": "2025-02-03 18:43:41.778790+0100"
     },
     "_pyright.py": {
       "md5": "2d8f8094cfb7ecf951f2e4a276b3f44f",
@@ -245,7 +310,9 @@
       "name": "_pyright.py",
       "size": 4700,
       "attr": "A",
-      "modified": "2025-02-02 13:05:39.808825+0100"
+      "modified": "2025-02-02 13:05:39.808825+0100",
+      "created": "2025-02-02 14:42:42.595468+0100",
+      "access": "2025-02-03 18:43:41.778790+0100"
     },
     "___cheatsheet.txt": {
       "md5": "832b236d0c98252bc8cb1c7fa0719214",
@@ -253,7 +320,9 @@
       "name": "___cheatsheet.txt",
       "size": 6321,
       "attr": "A",
-      "modified": "2025-02-02 14:16:36.278416+0100"
+      "modified": "2025-02-02 14:16:36.278416+0100",
+      "created": "2025-02-02 14:42:42.600473+0100",
+      "access": "2025-02-03 18:43:41.778790+0100"
     },
     "___start.txt": {
       "md5": "ec5e1a08b48bd3549e322c03bb59c9b7",
@@ -261,7 +330,9 @@
       "name": "___start.txt",
       "size": 146,
       "attr": "A",
-      "modified": "2025-02-02 14:33:10.710199+0100"
+      "modified": "2025-02-02 14:33:10.710199+0100",
+      "created": "2025-02-02 14:42:42.605468+0100",
+      "access": "2025-02-03 18:43:41.778790+0100"
     }
   }
 }

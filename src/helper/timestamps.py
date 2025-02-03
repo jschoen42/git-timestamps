@@ -4,7 +4,7 @@
     helper/timestamps.py
 
     PUBLIC:
-     - read_metadata(drive_path: Path, project_path: Path, ignore_list: Dict[str, List[str]]) -> None:
+     - read_metadata(drive_path: Path, project_path: Path, ignore_list: Dict[str, List[str]], reset: bool=False) -> None
      - write_metadata(drive_path: Path, project_path: Path, verbose: bool=False) -> bool:
 
     TO LIB:
@@ -15,7 +15,7 @@
 
     PRIVATE:
      - scan_files(drive: Path, project_path: Path, files: List[str]) -> Dict[str, Any]
-     - get_file_metadata(file_path: Path, project_path: Path) -> Tuple[str, Dict[str, str | int]]
+     - get_file_metadata(file_path: Path, project_path: Path) -> Tuple[str, Dict[str, str | int] | None]
      - update_metadata(existing_metadata: Dict[str, Any], new_metadata: Dict[str, Any]) -> Dict[str, Any]
 """
 
@@ -27,23 +27,23 @@ from pathlib import Path, PurePosixPath
 from datetime import datetime, timezone
 
 from utils.trace import Trace
-# from utils.decorator import duration
-
-from utils.util import export_json, import_json
+from utils.file  import check_path_exists
+from utils.util  import export_json, import_json
 
 from helper.rekursion import get_filepaths_ancor
 
 TIMESTAMP_STORAGE = ".timestamps.json"
 
 # PUBLIC:
-def read_metadata(drive_path: Path, project_path: Path, ignore_list: Dict[str, List[str]]) -> None:
+def read_metadata(drive_path: Path, project_path: Path, ignore_list: Dict[str, List[str]], reset: bool=False) -> bool:
 
-    files, _folders, _errors = get_filepaths_ancor( drive_path / project_path, exclude=ignore_list, show_result=False )
+    files, _folders, _errors = get_filepaths_ancor( drive_path / project_path, exclude = ignore_list, show_result=False )
     metadata = scan_files(drive_path, project_path, files)
 
-    old_data = import_json( project_path, TIMESTAMP_STORAGE, show_error = False )
-    if old_data is not None:
-        metadata = update_metadata( old_data["metadata"], metadata )
+    if not reset:
+        old_data = import_json( project_path, TIMESTAMP_STORAGE, show_error=False )
+        if old_data is not None:
+            metadata = update_metadata( old_data["metadata"], metadata )
 
     filedata = {
         "scan": {
@@ -57,6 +57,7 @@ def read_metadata(drive_path: Path, project_path: Path, ignore_list: Dict[str, L
 
     export_json( project_path, TIMESTAMP_STORAGE, filedata, show_message=False )
     Trace.result( f"'{project_path}' {len(files)} files" )
+    return True
 
 def write_metadata(drive_path: Path, project_path: Path, verbose: bool=False) -> bool:
     data = import_json( project_path, TIMESTAMP_STORAGE, show_error = True)
@@ -71,10 +72,13 @@ def write_metadata(drive_path: Path, project_path: Path, verbose: bool=False) ->
         modified = values["modified"]
         epoche   = scan_time(modified)
 
-        fullpath = drive_path / project_path / key.lstrip("/")
+        fullpath = drive_path / project_path / key
 
         if os.path.exists(fullpath):
-            _, metadata = get_file_metadata( fullpath, key)
+            _, metadata = get_file_metadata(fullpath, key)
+            if metadata is None:
+                Trace.error(f"'{key}' error")
+                continue
 
             if metadata["md5"] == md5:
                 if modified != metadata["modified"]:
@@ -95,7 +99,7 @@ def write_metadata(drive_path: Path, project_path: Path, verbose: bool=False) ->
     return True
 
 # TO LIB
-def format_time( time: float ) -> str:
+def format_time( time: float) -> str:
     datetime_object = datetime.fromtimestamp(time, tz=timezone.utc).astimezone(tz=None)
     return datetime_object.strftime("%Y-%m-%d %H:%M:%S.%f%z")
 
@@ -131,9 +135,14 @@ def get_file_arributes( path: Path ) -> str:
 
 def calculate_md5(file_path: Path) -> str:
     hash_md5 = hashlib.md5()
-    with open(file_path, "rb") as f:
-        for chunk in iter(lambda: f.read(4096), b""):
-            hash_md5.update(chunk)
+    try:
+        with open(file_path, "rb") as f:
+            for chunk in iter(lambda: f.read(4096), b""):
+                hash_md5.update(chunk)
+    except OSError as err:
+        Trace.error( f"{err}" )
+        return ""
+
     return hash_md5.hexdigest()
 
 # PRIVATE:
@@ -142,12 +151,17 @@ def scan_files(drive: Path, project_path: Path, files: List[str]) -> Dict[str, A
     for file in files:
         file_path = drive / project_path / file
 
-        key, data = get_file_metadata(Path(file_path), project_path)
-        metadata[key] = data
+        try:
+            key, data = get_file_metadata(Path(file_path), project_path)
+            if data is not None:
+                metadata[key] = data
+        except OSError as err:
+            Trace.error( f"{err} - {key}" )
+            continue
 
     return metadata
 
-def get_file_metadata(file_path: Path, project_path: Path) -> Tuple[str, Dict[str, str | int]]:
+def get_file_metadata(file_path: Path, project_path: Path) -> Tuple[str, Dict[str, str | int] | None]:
 
     # file_path:    "G:\Python\_empty\.gitignore"
     # project_path: "\Python\_empty"
@@ -163,12 +177,15 @@ def get_file_metadata(file_path: Path, project_path: Path) -> Tuple[str, Dict[st
 
     p1 = str(PurePosixPath(file_path).parent)
     p2 = str(PurePosixPath(project_path))
-    rel_path = p1.split(p2)[-1]
+    rel_path = p1.split(p2)[-1].lstrip("/")
 
     if rel_path == "":
         key = file_path.name
     else:
         key = rel_path + "/" + file_path.name
+
+    if not check_path_exists(file_path):
+        return (key, None)
 
     return (
         key,
@@ -179,9 +196,8 @@ def get_file_metadata(file_path: Path, project_path: Path) -> Tuple[str, Dict[st
             "size": os.stat(file_path).st_size,
             "attr": get_file_arributes(file_path),
             "modified": format_time(os.path.getmtime(file_path)),
-
-            # "created": format_time(os.path.getctime(file_path)),
-            # "access": format_time(os.path.getatime(file_path)),
+            "created": format_time(os.path.getctime(file_path)),
+            "access": format_time(max(0, os.path.getatime(file_path))),
         }
     )
 
