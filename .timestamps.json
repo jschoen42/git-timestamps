@@ -1,8 +1,8 @@
 {
   "scan": {
-    "date": "2025-02-02T23:57:11.662528",
+    "date": "2025-02-03T16:00:49.605505",
     "path": "G:/Python/Git/git-timestamp",
-    "files": 29,
+    "files": 30,
     "ignore": {
       "folder": [
         "__pycache__",
@@ -120,20 +120,20 @@
       "modified": "2025-02-02 22:10:15.325736+0100"
     },
     "/settings/projects.yaml": {
-      "md5": "1f053b620cd30b7ffd23229619901644",
+      "md5": "5b0968f3a199c328f95b715bd70b63fb",
       "path": "/settings",
       "name": "projects.yaml",
+      "size": 95,
+      "attr": "A",
+      "modified": "2025-02-03 13:54:37.325421+0100"
+    },
+    "/settings/projects_all.yaml": {
+      "md5": "1f053b620cd30b7ffd23229619901644",
+      "path": "/settings",
+      "name": "projects_all.yaml",
       "size": 3223,
       "attr": "A",
-      "modified": "2025-02-02 20:31:37.292388+0100"
-    },
-    "/src/helper/read_data.py": {
-      "md5": "52704cb2f393a44e50f09e01f5719c66",
-      "path": "/src/helper",
-      "name": "read_data.py",
-      "size": 4386,
-      "attr": "A",
-      "modified": "2025-02-02 22:53:24.272414+0100"
+      "modified": "2025-02-02 21:53:49.162526+0100"
     },
     "/src/helper/rekursion.py": {
       "md5": "d0aca53218bafffa7516c8c3e37b85d1",
@@ -143,13 +143,21 @@
       "attr": "A",
       "modified": "2025-02-02 22:51:47.621129+0100"
     },
+    "/src/helper/timestamps.py": {
+      "md5": "30af10e9b48707b7efc6474421615195",
+      "path": "/src/helper",
+      "name": "timestamps.py",
+      "size": 6447,
+      "attr": "A",
+      "modified": "2025-02-03 15:57:11.125616+0100"
+    },
     "/src/main.py": {
-      "md5": "9de4df0b70979f99437d4c7f448ca59b",
+      "md5": "a20153e399a24868084a954ff25651fe",
       "path": "/src",
       "name": "main.py",
-      "size": 1003,
+      "size": 1135,
       "attr": "A",
-      "modified": "2025-02-02 23:47:00.969395+0100"
+      "modified": "2025-02-03 16:00:03.709118+0100"
     },
     "/src/utils/decorator.py": {
       "md5": "dbc61109d24411febaae143423b6297f",
@@ -224,12 +232,12 @@
       "modified": "2025-02-02 14:51:55.694440+0100"
     },
     "_mypy.py": {
-      "md5": "1d4af9a952e13388466b1a4a3d81ae5e",
+      "md5": "2e14138b0e4070c44dedc7b1621aba07",
       "path": "",
       "name": "_mypy.py",
-      "size": 4819,
+      "size": 4821,
       "attr": "A",
-      "modified": "2025-02-02 23:19:45.364656+0100"
+      "modified": "2025-02-02 23:14:35.723451+0100"
     },
     "_pyright.py": {
       "md5": "2d8f8094cfb7ecf951f2e4a276b3f44f",
