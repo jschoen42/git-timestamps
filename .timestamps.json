@@ -1,6 +1,6 @@
 {
   "scan": {
-    "date": "2025-02-02T22:49:37.900733",
+    "date": "2025-02-02T23:57:11.662528",
     "path": "G:/Python/Git/git-timestamp",
     "files": 29,
     "ignore": {
@@ -72,12 +72,12 @@
       "modified": "2024-12-29 22:06:12.764633+0100"
     },
     "pyproject.toml": {
-      "md5": "d3c0a37533b6452ac240eb1d52afb728",
+      "md5": "2386a6638c07be3afb6ed4b8921a1bfb",
       "path": "",
       "name": "pyproject.toml",
-      "size": 732,
+      "size": 676,
       "attr": "A",
-      "modified": "2025-02-02 14:51:55.593876+0100"
+      "modified": "2025-02-02 23:17:37.886969+0100"
     },
     "README.md": {
       "md5": "d41d8cd98f00b204e9800998ecf8427e",
@@ -88,12 +88,12 @@
       "modified": "2024-11-23 00:07:05.885005+0100"
     },
     "requirements.txt": {
-      "md5": "d41d8cd98f00b204e9800998ecf8427e",
+      "md5": "b7e3f1bb18fc24ff048f76cf6f7b36ec",
       "path": "",
       "name": "requirements.txt",
-      "size": 0,
+      "size": 8,
       "attr": "A",
-      "modified": "2024-12-11 12:56:00.026781+0100"
+      "modified": "2025-02-02 22:55:10.687830+0100"
     },
     "ruff.toml": {
       "md5": "8d90a4d239ad09f87cfdd86afb961fa9",
@@ -128,20 +128,20 @@
       "modified": "2025-02-02 20:31:37.292388+0100"
     },
     "/src/helper/read_data.py": {
-      "md5": "ba8192071ecc77da5b3ea5265013ddca",
+      "md5": "52704cb2f393a44e50f09e01f5719c66",
       "path": "/src/helper",
       "name": "read_data.py",
-      "size": 4378,
+      "size": 4386,
       "attr": "A",
-      "modified": "2025-02-02 22:47:18.317478+0100"
+      "modified": "2025-02-02 22:53:24.272414+0100"
     },
     "/src/helper/rekursion.py": {
-      "md5": "08c31f8dcc44ecce642a76ba61c0c281",
+      "md5": "d0aca53218bafffa7516c8c3e37b85d1",
       "path": "/src/helper",
       "name": "rekursion.py",
-      "size": 3877,
+      "size": 3917,
       "attr": "A",
-      "modified": "2025-02-02 22:49:26.922615+0100"
+      "modified": "2025-02-02 22:51:47.621129+0100"
     },
     "/src/main.py": {
       "md5": "9de4df0b70979f99437d4c7f448ca59b",
@@ -149,7 +149,7 @@
       "name": "main.py",
       "size": 1003,
       "attr": "A",
-      "modified": "2025-02-02 22:30:14.832366+0100"
+      "modified": "2025-02-02 23:47:00.969395+0100"
     },
     "/src/utils/decorator.py": {
       "md5": "dbc61109d24411febaae143423b6297f",
@@ -184,12 +184,12 @@
       "modified": "2025-01-19 18:11:39.980743+0100"
     },
     "/src/utils/trace.py": {
-      "md5": "ac6012dd72445776ccef277b63c09b55",
+      "md5": "ce53f99ffe4b1dcf57909bfb844f3f9d",
       "path": "/src/utils",
       "name": "trace.py",
-      "size": 16046,
+      "size": 15973,
       "attr": "A",
-      "modified": "2025-01-19 18:11:07.865167+0100"
+      "modified": "2025-02-02 23:45:36.000087+0100"
     },
     "/src/utils/util.py": {
       "md5": "52a5a8ff93d17732f10f714dedba78ef",
@@ -224,12 +224,12 @@
       "modified": "2025-02-02 14:51:55.694440+0100"
     },
     "_mypy.py": {
-      "md5": "3fdc79087fa0a24205c59b61abc2607c",
+      "md5": "1d4af9a952e13388466b1a4a3d81ae5e",
       "path": "",
       "name": "_mypy.py",
-      "size": 4721,
+      "size": 4819,
       "attr": "A",
-      "modified": "2025-01-21 21:33:17.882997+0100"
+      "modified": "2025-02-02 23:19:45.364656+0100"
     },
     "_pyright.py": {
       "md5": "2d8f8094cfb7ecf951f2e4a276b3f44f",

@@ -12,6 +12,8 @@ from utils.util import export_json, import_json
 
 from helper.rekursion import get_filepaths_ancor
 
+TIMESTAMP_STORAGE = ".timestamps.json"
+
 def format_time( time: float ) -> str:
     datetime_object = datetime.fromtimestamp(time, tz=timezone.utc).astimezone(tz=None)
     return datetime_object.strftime("%Y-%m-%d %H:%M:%S.%f%z")
@@ -115,13 +117,13 @@ def update_metadata(existing_metadata: Dict[str, Any], new_metadata: Dict[str, A
 
     return updated
 
-# @duration("{__name__} '{project_path}'")
+
 def read_metadata(drive_path: Path, project_path: Path, ignore_list: Dict[str, List[str]]) -> None:
 
     files, _folders, _errors = get_filepaths_ancor( drive_path / project_path, exclude=ignore_list, show_result=False )
     metadata = scan_files(drive_path, project_path, files)
 
-    old_data = import_json( project_path, ".timestamps.json", show_error = False )
+    old_data = import_json( project_path, TIMESTAMP_STORAGE, show_error = False )
     if old_data is not None:
         metadata = update_metadata( old_data["metadata"], metadata )
 
@@ -135,5 +137,42 @@ def read_metadata(drive_path: Path, project_path: Path, ignore_list: Dict[str, L
         "metadata": metadata
     }
 
-    export_json( project_path, ".timestamps.json", filedata, show_message=False )
+    export_json( project_path, TIMESTAMP_STORAGE, filedata, show_message=False )
     Trace.result( f"'{project_path}' {len(files)} files" )
+
+
+def write_metadata(drive_path: Path, project_path: Path, verbose: bool=False) -> bool:
+    data = import_json( project_path, TIMESTAMP_STORAGE, show_error = True)
+    if data is None:
+        return False
+
+    infos = data["metadata"]
+
+    count = 0
+    for key, values in infos.items():
+        md5      = values["md5"]
+        modified = values["modified"]
+        epoche   = scan_time(modified)
+
+        fullpath = drive_path / project_path / key.lstrip("/")
+
+        if os.path.exists(fullpath):
+            _, metadata = get_file_metadata( fullpath, key)
+
+            if metadata["md5"] == md5:
+                if modified != metadata["modified"]:
+                    os.utime(fullpath, (-1, epoche))
+                    Trace.update(f"'{key}' update modification date")
+                    count += 1
+                else:
+                    if verbose:
+                        Trace.info(f"'{key}' unchanged [modification date is up-to-date]")
+            else:
+                if verbose:
+                    Trace.info(f"'{key}' unchanged [md5 hash is different]")
+        else:
+            if verbose:
+                Trace.info(f"'{key}' not found in project")
+
+    Trace.result( f"'{project_path}' {count} timestamp(s) updated" )
+    return True

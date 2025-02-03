@@ -22,6 +22,10 @@ def run_mypy(target_file: str) -> None:
         # Incremental mode
         "--sqlite-cache",
 
+        # Import discovery
+        "--explicit-package-bases",
+        "--namespace-packages",
+
         # Untyped definitions and calls
         "--disallow-untyped-calls",
         "--disallow-untyped-defs",
