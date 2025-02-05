@@ -36,7 +36,7 @@ if __name__ == "__main__":
     Trace.set( debug_mode=True, timezone=False )
     Trace.action(f"Python version {sys.version}")
 
-    setting = "projects.yaml"    # projects_all.yaml projects.yaml
+    setting = "projects_all.yaml"    # projects_all.yaml projects.yaml
     args = parse_arguments(setting)
 
     Prefs.init("settings", "")

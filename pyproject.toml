@@ -11,22 +11,12 @@ requires-python = ">=3.13"
 dependencies = [
     "pyyaml>=6.0.2",
 ]
-
 [dependency-groups]
 dev = [
-    "mypy>=1.14.1",
+    "mypy>=1.15.0",
+    "types-python-dateutil>=2.9.0.20241206",
+    "types-pyyaml>=6.0.12.20241230",
     "lxml-stubs>=0.5.1",
     "types-openpyxl>=3.1.5.20241225",
-    "types-pyyaml>=6.0.12.20241230",
     "types-xmltodict>=0.14.0.20241009",
-    "types-python-dateutil>=2.9.0.20241206",
 ]
-
-[tool.mypy]
-python_version = "3.13"
-mypy_path = "src"
-
-[[tool.mypy.overrides]]
-module = "faster_whisper.*"
-ignore_errors = true
-ignore_missing_imports = true

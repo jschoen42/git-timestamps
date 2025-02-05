@@ -1,0 +1,37 @@
+Python:   3.13.2 (main, Feb  5 2025, 19:16:35) [MSC v.1942 64 bit (AMD64)]
+Platform: Windows-11-10.0.22631-SP0
+Date:     07.02.2025 23:29:40
+Path:     G:\Python\Git\git-timestamp
+
+MyPy 1.15.0 settings:
+ - Python version 3.13
+ --namespace-packages
+ --explicit-package-bases
+ --disallow-untyped-calls
+ --disallow-untyped-defs
+ --disallow-incomplete-defs
+ --disallow-untyped-decorators
+ --warn-redundant-casts
+ --warn-no-return
+ --warn-unreachable
+ --allow-redefinition
+ --extra-checks
+ --force-uppercase-builtins
+ --sqlite-cache
+ --strict-equality
+
+Source files:
+ - src/__init__.py
+ - src/helper/argsparse.py
+ - src/helper/rekursion.py
+ - src/helper/timestamps.py
+ - src/utils/__init__.py
+ - src/utils/decorator.py
+ - src/utils/file.py
+ - src/utils/globals.py
+ - src/utils/prefs.py
+ - src/utils/trace.py
+ - src/utils/util.py
+ - src/main.py
+
+Success: no issues found in 12 source files

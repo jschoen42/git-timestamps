@@ -10,6 +10,7 @@ ignore_list:
     - .mypy_cache
     - .type-check-result
     - data
+    - fonts
     - result
     - wav
     - examples
