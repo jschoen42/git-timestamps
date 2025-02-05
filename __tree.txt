@@ -1,0 +1,2 @@
+git-timestamp v0.1.0
+└── pyyaml v6.0.2

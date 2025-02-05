@@ -1,18 +1,19 @@
 """
-    © Jürgen Schoenemeyer, 02.02.2025
+    © Jürgen Schoenemeyer, 05.02.2025
 
     src/utils/util.py
 
     PUBLIC:
+     - import_text(folderpath: Path | str, filename: Path | str, encoding: str="utf-8", show_error: bool=True) -> str | None
+     - import_json(folderpath: Path | str, filename: str, show_error: bool=True) -> Any
+     - import_json_timestamp(folderpath: Path | str, filename: str, show_error: bool=True) -> Tuple[Any, float | None]
+
+     - export_text(folderpath: Path | str, filename: str, text: str, encoding: str="utf-8", timestamp: None | float=0, ret_lf: bool=False, create_new_folder: bool=True, show_message: bool=True) -> str | None
+     - export_json(folderpath: Path | str, filename: str, data: Dict[Any, Any] | List[Any], timestamp: float | None = None, show_message: bool=True) -> str | None
+
+    HELPER:
      - format_subtitle( start_time: float, end_time: float, text: str, color=True ) -> str
      - format_timestamp(seconds: float, always_include_hours: bool=False, decimal_marker: str=".", fps: float = 30) -> str
-
-     - import_text(folderpath: Path | str, filename: Path|str, encoding: str="utf-8", show_error: bool=True) -> str | None:
-     - import_json_timestamp(folderpath: Path | str, filename: str, show_error: bool=True) -> Tuple[Dict | None, float | None]
-     - import_json(folderpath: Path | str, filename: str, show_error: bool=True) -> Dict | None
-
-     - export_text(folderpath: Path | str, filename: str, text: str, encoding: str = "utf-8", timestamp: float=0, ret_lf: bool=False, create_new_folder: bool=True, show_message: bool=True) -> str | None
-     - export_json(folderpath: Path | str, filename: str, data: Dict | List, timestamp = None, show_message: bool=True) -> str | None
 
     class CacheJSON:
       - def __init__(self, path: Path | str, name: str, model: str, reset: bool)
@@ -32,51 +33,6 @@ from pathlib import Path
 
 from utils.trace import Trace, Color
 from utils.file  import create_folder, get_modification_timestamp, set_modification_timestamp
-
-def format_subtitle( start_time: float, end_time: float, text: str, color: bool=True ) -> str:
-    start = format_timestamp(start_time)
-    end   = format_timestamp(end_time)
-
-    if color:
-        return f"{Color.BOLD}{Color.MAGENTA}[{start} --> {end}]{Color.NORMAL}{text}{Color.RESET}"
-    else:
-        return f"[{start} --> {end}]{text}"
-
-def format_timestamp(seconds: float, always_include_hours: bool=False, decimal_marker: str=".", fps: float = 30) -> str:
-
-    milliseconds = round(seconds * 1000.0)
-
-    if fps:  # match for fps
-        fr = round(milliseconds / 1000 * fps)
-        milliseconds = int(fr * 1000 / fps)
-
-        # patch for cc editor
-
-        if milliseconds % 100 == 66:  # error with n65 ... n71 (n: 0 ... 9) # 066, 766
-            milliseconds -= 2
-
-        if milliseconds > 0:
-            if milliseconds % 1000 in (0, 100, 200, 800):  # ok: 100, 300, 400, 600
-                milliseconds += 2
-            elif milliseconds % 1000 == 900:
-                milliseconds += 4
-
-        if milliseconds % 1000 in (33, 933):
-            milliseconds -= 2
-
-    hours = milliseconds // 3_600_000
-    milliseconds -= hours * 3_600_000
-
-    minutes = milliseconds // 60_000
-    milliseconds -= minutes * 60_000
-
-    seconds = milliseconds // 1_000
-    milliseconds -= seconds * 1_000
-
-    hours_marker = f"{hours:02d}:" if always_include_hours or hours > 0 else ""
-    return (
-        f"{hours_marker}{minutes:02d}:{seconds:02d}{decimal_marker}{milliseconds:03d}"
-   )
 
 def import_text(folderpath: Path | str, filename: Path | str, encoding: str="utf-8", show_error: bool=True) -> str | None:
     filepath = Path(folderpath, filename)
@@ -100,20 +56,20 @@ def import_text(folderpath: Path | str, filename: Path | str, encoding: str="utf
             Trace.error(f"file not exist {filepath}")
         return None
 
-def import_json_timestamp(folderpath: Path | str, filename: str, show_error: bool=True) -> Tuple[Dict[str, float] | None, float | None]:
+def import_json(folderpath: Path | str, filename: str, show_error: bool=True) -> Any | None:
+    result = import_text(folderpath, filename, show_error=show_error)
+    if result:
+        data = json.loads(result)
+        return data
+    else:
+        return None
+
+def import_json_timestamp(folderpath: Path | str, filename: str, show_error: bool=True) -> Tuple[Any | None, float]:
     ret = import_json(folderpath, filename, show_error=show_error)
     if ret:
         return ret, get_modification_timestamp(Path(folderpath, filename))
     else:
-        return None, None
-
-def import_json(folderpath: Path | str, filename: str, show_error: bool=True) -> Dict[Any, Any] | None:
-    result = import_text(folderpath, filename, show_error=show_error)
-    if result:
-        data: Dict[Any, Any] = json.loads(result)
-        return data
-    else:
-        return None
+        return None, 0.0
 
 def export_text(folderpath: Path | str, filename: str, text: str, encoding: str="utf-8", timestamp: None | float=0, ret_lf: bool=False, create_new_folder: bool=True, show_message: bool=True) -> str | None:
     folderpath = Path(folderpath)
@@ -164,8 +120,54 @@ def export_json(folderpath: Path | str, filename: str, data: Dict[Any, Any] | Li
 
     return export_text(folderpath, filename, text, encoding = "utf-8", timestamp = timestamp, show_message = show_message)
 
+# HELPER
+def format_subtitle( start_time: float, end_time: float, text: str, color: bool=True ) -> str:
+    start = format_timestamp(start_time)
+    end   = format_timestamp(end_time)
+
+    if color:
+        return f"{Color.BOLD}{Color.MAGENTA}[{start} --> {end}]{Color.NORMAL}{text}{Color.RESET}"
+    else:
+        return f"[{start} --> {end}]{text}"
+
+def format_timestamp(seconds: float, always_include_hours: bool=False, decimal_marker: str=".", fps: float = 30) -> str:
+
+    milliseconds = round(seconds * 1000.0)
+
+    if fps:  # match for fps
+        fr = round(milliseconds / 1000 * fps)
+        milliseconds = int(fr * 1000 / fps)
+
+        # patch for cc editor
+
+        if milliseconds % 100 == 66:  # error with n65 ... n71 (n: 0 ... 9) # 066, 766
+            milliseconds -= 2
+
+        if milliseconds > 0:
+            if milliseconds % 1000 in (0, 100, 200, 800):  # ok: 100, 300, 400, 600
+                milliseconds += 2
+            elif milliseconds % 1000 == 900:
+                milliseconds += 4
+
+        if milliseconds % 1000 in (33, 933):
+            milliseconds -= 2
+
+    hours = milliseconds // 3_600_000
+    milliseconds -= hours * 3_600_000
+
+    minutes = milliseconds // 60_000
+    milliseconds -= minutes * 60_000
+
+    seconds = milliseconds // 1_000
+    milliseconds -= seconds * 1_000
+
+    hours_marker = f"{hours:02d}:" if always_include_hours or hours > 0 else ""
+    return (
+        f"{hours_marker}{minutes:02d}:{seconds:02d}{decimal_marker}{milliseconds:03d}"
+)
+
 class CacheJSON:
-    cache: Dict[Any, Any] = {}
+    cache: Dict[str, Any] = {}
     path: Path = Path()
     name: str = ""
 

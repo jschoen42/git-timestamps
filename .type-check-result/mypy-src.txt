@@ -1,0 +1,45 @@
+Python:   3.13.1 (main, Dec  6 2024, 18:07:41) [MSC v.1942 64 bit (AMD64)]
+Platform: Windows-11-10.0.22631-SP0
+Date:     04.02.2025 11:13:54
+Path:     G:\Python\Git\git-timestamp
+
+MyPy 1.14.1 settings:
+ --namespace-packages
+ --explicit-package-bases
+ --disallow-untyped-calls
+ --disallow-untyped-defs
+ --disallow-incomplete-defs
+ --disallow-untyped-decorators
+ --warn-redundant-casts
+ --warn-no-return
+ --warn-return-any
+ --warn-unreachable
+ --allow-redefinition
+ --extra-checks
+ --force-uppercase-builtins
+ --sqlite-cache
+ --strict-equality
+
+Source files:
+ - src/__init__.py
+ - src/helper/argsparse.py
+ - src/helper/rekursion.py
+ - src/helper/timestamps.py
+ - src/utils/__init__.py
+ - src/utils/decorator.py
+ - src/utils/file.py
+ - src/utils/globals.py
+ - src/utils/prefs.py
+ - src/utils/trace.py
+ - src/utils/util.py
+ - src/main.py
+
+src\main.py:7: error: Cannot find implementation or library stub for module named "merge"  [import-not-found]
+src\main.py:7: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports
+src\main.py:48: error: List item 0 has incompatible type "Dict[str, Sequence[str]]"; expected "Dict[str, str | List[str]]"  [list-item]
+src\main.py:48: error: List item 1 has incompatible type "Dict[str, Sequence[str]]"; expected "Dict[str, str | List[str]]"  [list-item]
+src\main.py:48: error: List item 2 has incompatible type "Dict[str, Sequence[str]]"; expected "Dict[str, str | List[str]]"  [list-item]
+src\main.py:52: error: Unsupported operand types for / ("Path" and "List[str]")  [operator]
+src\main.py:52: note: Right operand is of type "str | List[str]"
+
+Found 5 errors in 1 file (checked 12 source files)
