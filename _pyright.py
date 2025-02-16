@@ -141,7 +141,7 @@ def run_pyright(target_file: str) -> None:
 
             text += "\n"
 
-    with open(folder_path / f"pyright-{name}.txt", "w") as file:
+    with open(folder_path / f"pyright-{name}.txt", "w", newline="\n") as file:
         file.write(text)
 
     duration = time.time() - start
@@ -151,7 +151,11 @@ def run_pyright(target_file: str) -> None:
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        print("Usage: _pyright.py <target_file>")
+        print("Usage: _pyright.py <dir_or_file>")
         sys.exit(1)
 
-    run_pyright(sys.argv[1])
+    try:
+        run_pyright(sys.argv[1])
+    except KeyboardInterrupt:
+        print(" --> KeyboardInterrupt")
+        sys.exit(1)

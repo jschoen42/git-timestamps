@@ -1,22 +1,20 @@
 [project]
 name = "git-timestamp"
-version = "0.1.0"
-description = "Add your description here"
+version = "0.1.1"
+description = "..."
 authors = [
   { name="Jürgen Schoenemeyer", email="js007@web.de" },
 ]
 license = {file = "LICENSE"}
 readme = "README.md"
 requires-python = ">=3.13"
+
 dependencies = [
     "pyyaml>=6.0.2",
 ]
+
 [dependency-groups]
 dev = [
     "mypy>=1.15.0",
-    "types-python-dateutil>=2.9.0.20241206",
     "types-pyyaml>=6.0.12.20241230",
-    "lxml-stubs>=0.5.1",
-    "types-openpyxl>=3.1.5.20241225",
-    "types-xmltodict>=0.14.0.20241009",
 ]

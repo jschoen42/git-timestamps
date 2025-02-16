@@ -3,8 +3,9 @@ bash: source .venv/Scripts/activate
 deactivate
 
 python src/main.py -r
-python src/main.py -w -s projects.yaml
-python src/main.py -r -s projects_all.yaml
+
+python src/main.py -r -s repos.yaml
+python src/main.py -w -s repos_single.yaml
 
 python _mypy.py src
 python _pyright.py src

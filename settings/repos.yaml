@@ -1,0 +1,259 @@
+%YAML 1.1
+---
+
+repos:
+  - name: _empty
+    path: /Python
+    lib:  true
+
+  - name: amazon-polly
+    path: /Python/Amazon-AWS
+    lib:  true
+
+  - name: args-kwargs
+    path: /Python
+    lib:  true
+
+  - name: audible-create-cue
+    path: /Python
+    lib:  true
+
+  - name: beautify-files
+    path: /Python
+    lib:  true
+
+  - name: circular-buffer
+    path: /Python/PyTest
+    lib:  true
+
+  - name: convert-fonts
+    path: /Python/FontTools
+    lib:  true
+
+  - name: convert-images-web
+    path: /Python
+    lib:  true
+
+  - name: datetime-arrow
+    path: /Python
+    lib:  true
+
+  - name: django-course
+    path: /Python/Django
+    lib:  false
+
+  - name: django-new
+    path: /Python/Django
+    lib:  false
+
+  - name: Django-HTMX-Finance-App
+    path: /Python/Django
+    lib:  false
+
+  - name: docker-create-files
+    path: /Python/Docker
+    lib:  true
+
+  - name: docker-with-parameter
+    path: /Python/Docker
+    lib:  true
+
+  - name: excel-playground
+    path: /Python/Excel
+    lib:  true
+
+  - name: fastapi-crud-application
+    path: /Python/FastAPI
+    lib:  false
+
+  - name: fastapi-tests
+    path: /Python/FastAPI
+    lib:  true
+
+  - name: elevenlabs-api
+    path: /Python/ElevenLabs
+    lib:  true
+
+  - name: flask-api
+    path: /Python/Flask
+    lib:  true
+
+  - name: game-of-live
+    path: /Python/Cython
+    lib:  true
+
+  - name: git-timestamp
+    path: /Python/Git
+    lib:  true
+
+  - name: github-codespace-test
+    path: /Python
+    lib:  true
+
+  - name: hyphenation-test
+    path: /Python
+    lib:  true
+
+  - name: lectora-datev
+    path: /Python
+    lib:  true
+
+  - name: mathplotlib-examples
+    path: /Python/Mathplotlib
+    lib:  true
+
+  - name: media-info-try
+    path: /Python/MediaInfo
+    lib:  true
+
+  - name: password-hash
+    path: /Python
+    lib:  true
+
+  - name: pdf-merge
+    path: /Python
+    lib:  true
+
+  - name: port-scanner
+    path: /Python
+    lib:  true
+
+  - name: pyright-tests
+    path: /Python/Pyright
+    lib:  true
+
+  - name: PyQT6-stopwatch
+    path: /Python/QT
+    lib:  true
+
+  - name: pyside6-tests
+    path: /Python/QT
+    lib:  true
+
+  - name: python-analyse
+    path: /Python
+    lib:  true
+
+  - name: python-decorators
+    path: /Python
+    lib:  true
+
+  - name: python-starter
+    path: /Python
+    lib:  true
+
+  - name: qr-code
+    path: /Python
+    lib:  true
+
+  - name: recursion-fibonacci
+    path: /Python/Rekursion
+    lib:  true
+
+  - name: recursion-list_all_path
+    path: /Python/Rekursion
+    lib:  true
+
+  - name: rustedpy
+    path: /Python
+    lib:  true
+
+  - name: normalize-wav
+    path: /Python/SciPy
+    lib:  true
+
+  - name: sockets-client-server
+    path: /Python
+    lib:  true
+
+  - name: storyline-analyse
+    path: /Python/Storyline
+    lib:  true
+
+  - name: storyline-unpack-js
+    path: /Python/Storyline
+    lib:  true
+
+  - name: storyline-webplayer
+    path: /Python/Storyline
+    lib:  true
+
+  - name: storyline-xml
+    path: /Python/Storyline
+    lib:  true
+
+  - name: storyline-zip-test
+    path: /Python/Storyline
+    lib:  true
+
+  - name: import-starter
+    path: /Python/Storyline/impl
+    lib:  true
+
+  - name: streamlit-try
+    path: /Python/Streamlit
+    lib:  true
+
+  - name: svg-wrapper
+    path: /Python
+    lib:  true
+
+  - name: custom-tkinter-try
+    path: /Python/Tkinter
+    lib:  true
+
+  - name: pygubu-try
+    path: /Python/Tkinter
+    lib:  true
+
+  - name: try-pandas
+    path: /Python/Pandas
+    lib:  true
+
+  - name: txtai-try
+    path: /Python/txtai
+    lib:  true
+
+  - name: unreal-memreport
+    path: /Python
+    lib:  true
+
+  - name: virtual-lobby
+    path: /Python/VirtualLobby/impl/mgr
+    lib:  true
+
+  - name: try-hunspell
+    path: /Python/Whisper
+    lib:  true
+
+  - name: try-faster-whisper
+    path: /Python/Whisper
+    lib:  true
+
+  - name: patch-faster-whisper
+    path: /Python/Whisper
+    lib:  true
+
+  - name: try-spacy
+    path: /Python/Whisper
+    lib:  true
+
+  - name: try-stanza
+    path: /Python/Whisper
+    lib:  true
+
+  - name: try-whisper
+    path: /Python/Whisper
+    lib:  true
+
+  - name: whisper-datev-gitlab
+    path: /Python/Whisper
+    lib:  true
+
+  - name: whisper-subtitles-github
+    path: /Python/Whisper
+    lib:  true
+
+  - name: Youtube-download-helper
+    path: /Python
+    lib:  true

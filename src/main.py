@@ -2,8 +2,10 @@
 # python src/main.py
 
 # python src/main.py -r
-# python src/main.py -w -s projects.yaml
-# python src/main.py -r -s projects_all.yaml
+# python src/main.py -r -s repos.yaml
+
+# python src/main.py -w -s repos_single.yaml
+
 
 import sys
 
@@ -17,26 +19,26 @@ from helper.argsparse  import parse_arguments
 from helper.timestamps import read_metadata, write_metadata
 
 def main( write: bool = False ) -> None:
-    projects  = Prefs.get("projects")
+    repos  = Prefs.get("repos")
     ignore_list = Prefs.get("ignore_list")
 
-    for project in projects:
-        dest = DRIVE / project["path"] / project["name"]
+    for repo in repos:
+        dest = DRIVE / repo["path"] / repo["name"]
 
         if not dest.exists():
-            Trace.error(f"Project '{dest}' not found")
+            Trace.error(f"repo '{dest}' not found")
             continue
 
         if write:
-            write_metadata(DRIVE, Path(project["path"]) / project["name"], verbose=True)
+            write_metadata(DRIVE, Path(repo["path"]) / repo["name"], verbose=True)
         else:
-            read_metadata(DRIVE, Path(project["path"]) / project["name"], ignore_list, reset=True)
+            read_metadata(DRIVE, Path(repo["path"]) / repo["name"], ignore_list, reset=True)
 
 if __name__ == "__main__":
     Trace.set( debug_mode=True, timezone=False )
     Trace.action(f"Python version {sys.version}")
 
-    setting = "projects_all.yaml"    # projects_all.yaml projects.yaml
+    setting = "repos.yaml"    # repos.yaml, repos_test.yaml
     args = parse_arguments(setting)
 
     Prefs.init("settings", "")
